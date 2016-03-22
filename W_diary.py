@@ -18,13 +18,15 @@ def add_data():
     date = Input.get_Date()
     temp = Input.get_temp()
     preasure = Input.get_preasure()
-    humidity =  Input.get_humidity()
-    wspeed  = Input.get_wspeed()
+    humidity = Input.get_humidity()
+    wspeed = Input.get_wspeed()
     wdirect = input('Enter wind direction (eg. SW or S): ')
     prec = input('Enter precipitations (eg. Rain or Snow): ')
     tmp = {date:[temp, preasure, humidity, wspeed, wdirect, prec]}
-    weather.update(tmp)                                         #rewrite data that already exsist
-    Open_file.save_data(weather)                                #save changes in file
+	#rewrite data that already exsist
+    weather.update(tmp) 
+	#save changes in file
+    Open_file.save_data(weather)                               
     tmp = input('Adding/Editing Successful. Press Enter to continue...')
 
 
@@ -33,7 +35,8 @@ def rm_data():
     date = Input.get_Date()
     if date in weather:
         del weather[date]
-        Open_file.save_data(weather)            #save changes in file
+		#save changes in file
+        Open_file.save_data(weather)            
         tmp = input('Removing Successful. Press Enter to continue...')
     else:
         tmp = input('Day in diary not found. Press Enter to continue...')

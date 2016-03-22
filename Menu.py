@@ -20,7 +20,8 @@ def print_menu():
             4. Show data by month
             5. Exit
                       ''')
-        ans = Input.get_choice()                #input menu key
+	  #input menu key
+        ans = Input.get_choice()                
         if ans == 1:
             W_diary.add_data()
         elif ans == 2:
