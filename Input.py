@@ -7,7 +7,8 @@ def get_Date():
             year = int(input('Enter date (year): '))
             month = int(input('Enter date (month):'))
             day = int(input('Enter date (day):'))
-            tmp = datetime.date(year, month, day)           #chack date
+			#check date
+            tmp = datetime.date(year, month, day)           
         except ValueError:
             print('Values is not correct. Try again.')
             continue
@@ -18,7 +19,8 @@ def get_temp():
     while True:
         try:
             tmp = int(input('Enter Temperature (eg. +8): '))
-        except ValueError:                                  #chack temperature
+        #check temperature
+		except ValueError:                                  
             print('Values is not correct. Try again.')
             continue
         return tmp
@@ -28,31 +30,44 @@ def get_humidity():
     while True:
         try:
             tmp = int(input('Enter humidity (%): '))
-        except ValueError:                                  #chack huminidy
+        #check humidity
+		except ValueError:                                  
             print('Values is not correct. Try again.')
             continue
-        if 0<=tmp<=100: return tmp
-        else: print('Values is not correct. Try again.')
+        if 0<=tmp<=100: 
+			return tmp
+        else: 
+			print('Values is not correct. Try again.')
 
 def get_preasure():
     #input preasure
     while True:
         try:
             tmp = int(input('Enter preasure (mm): '))
-        except ValueError:                              #chack preasure
+        #check preasure
+		except ValueError:                              
             print('Values is not correct. Try again.')
             continue
-        return tmp
+		if tmp >=0 :
+			return tmp
+		else:
+			print('Values is not correct. Try again.')
+		
 
 def get_wspeed():
     #input wind speed
     while True:
         try:
             tmp = float(input('Enter wind speed (m/sec): '))
-        except ValueError:                              #chack wind speed
+        #check wind speed
+		except ValueError:                              
             print('Values is not correct. Try again.')
             continue
-        return tmp
+		if tmp >= 0:
+			return tmp	
+		else: 
+			print('Values is not correct. Try again.')
+        
 
 def get_year():
     while True:
@@ -61,8 +76,10 @@ def get_year():
         except ValueError:
             print('Values is not correct. Try again.')
             continue
-        if 0<=tmp<=2016: return tmp
-        else: print('Values is not correct. Try again.')
+        if 0<=tmp<=2016: 
+			return tmp
+        else: 
+			print('Values is not correct. Try again.')
 
 def get_month():
     while True:
@@ -71,8 +88,10 @@ def get_month():
         except ValueError:
             print('Values is not correct. Try again.')
             continue
-        if 1<=tmp<=12: return tmp
-        else: print('Values is not correct. Try again.')
+        if 1<=tmp<=12: 
+			return tmp
+        else: 
+			print('Values is not correct. Try again.')
 
 def get_choice():
     while True:
